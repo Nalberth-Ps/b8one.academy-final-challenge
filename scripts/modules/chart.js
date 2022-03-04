@@ -42,13 +42,10 @@ export default function initChart() {
         },
       },
       layout: {
-        padding: 20,
+        padding: 10,
       },
       scales: {
         x: {
-          ticks: {
-            // paddingRight: 32,
-          },
           grid: {
             drawBorder: false,
             drawOnChartArea: false,

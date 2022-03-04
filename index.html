@@ -16,16 +16,18 @@
 </head>
 <body>
   <header class="header">
-    <div class="company">
+    <div class="header-block__left">
       <div class="hamburguer">
         <button class="hamburguer__action">
           <span class="hamburguer__item"></span>
         </button>
       </div>
-      <img class="company__logo" src="./assets/images/company-logo.png" alt="Logo da Empresa">
-      <span class="company__name">
-        Minha Empresa
-      </span>
+      <div class="company">      
+        <img class="company__logo" src="./assets/images/company-logo.png" alt="Logo da Empresa">
+        <span class="company__name">
+          Minha Empresa
+        </span>
+      </div>
     </div>
     <div class="user-actions">
       <ul class="user-actions__list">
@@ -390,7 +392,7 @@
           <h2 class="insights-wrapper-table__title">
             Produtos mais vendidos
           </h2>
-          <table class="insights__table">
+          <!-- <table class="insights__table">
             <thead class="insights-table__thead">
               <tr class="insights-table__trow">
                 <th class="insights-table__thead">
@@ -700,7 +702,7 @@
                 </td>
               </tr>
             </tbody>
-          </table>
+          </table> -->
         </div>
         <div class="insights__navbar">
           <div class="insights-navbar__quantity">
@@ -716,11 +718,11 @@
             </span>
           </div>
           <div class="insights__pagination">
-            <div class="pagination__arrow-wrapper">
+            <button type="button" class="pagination__arrow-wrapper">
               <svg class="pagination__arrow-icon" width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 1L1 4L4 7" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </div>
+            </button>
               
             <input class="insights-pagination__input" type="radio" name="pagination" id="first" checked>
             <label class="insights-pagination__label" for="first">1</label>
@@ -731,11 +733,11 @@
             <input class="insights-pagination__input"  type="radio" name="pagination" id="third">
             <label class="insights-pagination__label" for="third">3</label>
 
-            <div class="pagination__arrow-wrapper">
+            <button type="button" class="pagination__arrow-wrapper">
               <svg class="pagination__arrow-icon" width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.999878 7L3.99988 4L0.999878 0.999996" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>       
-            </div>       
+            </button>       
           </div>
         </div>
       </section>

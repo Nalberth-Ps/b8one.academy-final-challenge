@@ -1,0 +1,13 @@
+:root {
+  --neutral: #ffffff;
+  --neutral-low: #333333;
+  --neutral-medium: #555555;
+  --neutral-light: #eeeeee;
+  --neutral-hight: #d5d5d5;
+  --primary: #000000;
+  --primary-low: #f1f2f9;
+  --primary-dark: #142159;
+  --purple-default: #2e44a1;
+  --purple-light: #425dc7;
+  --feedback-helper: #f03460;
+}
