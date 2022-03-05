@@ -1,5 +1,4 @@
 const dropdownMenus = document.querySelectorAll("[data-dropdown]");
-
 export default function initDropdownMenu() {
   dropdownMenus.forEach((menu) => {
     ["touchstart", "click"].forEach((userEvent) => {
@@ -12,13 +11,12 @@ function handleClick(event) {
   event.preventDefault();
   const activeMenu = this;
   closeOpenDropdowns(activeMenu);
-  activeMenu.classList.toggle("dropdown__list--selected");
+  activeMenu.classList.toggle("nav__item--selected");
 }
 
 function closeOpenDropdowns(activeMenu) {
   dropdownMenus.forEach((menu) => {
     if (menu.innerHTML === activeMenu.innerHTML) return;
-
-    menu.classList.remove("dropdown__list--selected");
+    menu.classList.remove("nav__item--selected");
   });
 }
