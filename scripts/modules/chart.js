@@ -42,7 +42,9 @@ export default function initChart() {
         },
       },
       layout: {
-        padding: 10,
+        padding: {
+          top: 16,
+        },
       },
       scales: {
         x: {

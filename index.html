@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./assets/css/normalize.css">
-  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="./assets/css/dashboard.css">
+  <link rel="stylesheet" href="./assets/css/responsiveRules.css">
 </head>
 <body>
   <header class="header">
@@ -55,6 +56,64 @@
             <path d="M13.5859 20.1028C13.4248 20.3756 13.1934 20.6021 12.9151 20.7595C12.6368 20.9169 12.3213 20.9998 12.0001 20.9998C11.6789 20.9998 11.3634 20.9169 11.085 20.7595C10.8067 20.6021 10.5754 20.3756 10.4142 20.1028" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <span class="user-actions-item__notification-circle user-actions-item__notification-circle--active"></span>
+          <div class="dropdown__notification">
+            <div class="dropdown-notification__header">
+              <div class="hand-icon__wrapper">
+                <img src="./assets/images/hand-icon.svg" alt="Icone de uma mão">
+              </div>
+              <span class="dropdown-notification__title">
+                Bem-vindo(a) a Hubly Retailer
+              </span>
+              <span class="dropdown-notification__time">
+                10 min
+              </span>
+              <span class="dropdown-notification__circle"></span>
+            </div>
+            <span class="dropdown-notification__description">
+              Para uma completa experiência com a Retailer, precisamos que você siga os passos abaixo.
+            </span>
+            <div class="dropdown-notification__introduction-progress">
+              <div class="introduction-progress">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="20" height="20" rx="4" fill="#425DC7"/>
+                  <path d="M14.5834 7.08325L8.28127 12.9166L5.41669 10.2651" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="introduction-progress__text">
+                  Cadastrar Organização
+                </span>
+              </div>
+              <div class="introduction-progress">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1" y="1" width="18" height="18" rx="3" fill="white" stroke="black" stroke-width="2"/>
+                </svg>
+                <div class="introduction-progress__wrapper">
+                  <span class="introduction-progress__text">
+                    Convidar Revendedores
+                  </span>
+                  <a href="#" class="introduction-progress__link">
+                    Vamos lá!
+                  </a>
+                </div>                  
+              </div>
+            </div>
+            <div class="dropdown-notification__monthly-report">
+              <div class="monthly-report--top">
+                <img class="monthly-report__icon" src="./assets/images/general-report-icon.png" alt="icone relatório geral">
+                <span class="monthly-report__text">
+                  O seu Relatório Mensal está pronto!
+                </span>
+                <span class="monthly-report__time">
+                  12 min
+                </span>
+              </div>
+              <a href="#" class="monthly-report__link">
+                Ir para Relatórios
+              </a>
+            </div>
+            <button class="monthly-report__mark-as-reader">
+              Marcar como Lidas
+            </button>
+          </div>
         </li>
         <li class="user-actions__item">
           <div class="user-actions-item__profile">
@@ -422,6 +481,258 @@
                 <td class="insights-table__column col-1">
                   <span class="insights-table__product-indice">
                     1
+                  </span>
+                </td>
+                <td class="insights-table__column col-2">
+                  <span class="insights-table__product-description">
+                    <img src="./assets/images/product-image-01.png" alt="Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...">
+                    Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...
+                  </span>
+                </td>
+                <td class="insights-table__column col-3">
+                  <span class="insights-table__product-text">
+                    #912304817412-3
+                  </span>
+                </td>
+                <td class="insights-table__column col-4">
+                  <span class="insights-table__product-text">
+                    Eletrônicos
+                  </span>
+                </td>
+                <td class="insights-table__column col-5">
+                  <span class="insights-table__product-text">
+                    R$ 2.999,00
+                  </span>
+                </td>
+              </tr>
+              <tr class="insights-table__trow">
+                <td class="insights-table__column col-1">
+                  <span class="insights-table__product-indice">
+                    2
+                  </span>
+                </td>
+                <td class="insights-table__column col-2">
+                  <span class="insights-table__product-description">
+                    <img src="./assets/images/product-image-01.png" alt="Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...">
+                    Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...
+                  </span>
+                </td>
+                <td class="insights-table__column col-3">
+                  <span class="insights-table__product-text">
+                    #912304817412-3
+                  </span>
+                </td>
+                <td class="insights-table__column col-4">
+                  <span class="insights-table__product-text">
+                    Eletrônicos
+                  </span>
+                </td>
+                <td class="insights-table__column col-5">
+                  <span class="insights-table__product-text">
+                    R$ 2.999,00
+                  </span>
+                </td>
+              </tr>
+              <tr class="insights-table__trow">
+                <td class="insights-table__column col-1">
+                  <span class="insights-table__product-indice">
+                    3
+                  </span>
+                </td>
+                <td class="insights-table__column col-2">
+                  <span class="insights-table__product-description">
+                    <img src="./assets/images/product-image-01.png" alt="Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...">
+                    Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...
+                  </span>
+                </td>
+                <td class="insights-table__column col-3">
+                  <span class="insights-table__product-text">
+                    #912304817412-3
+                  </span>
+                </td>
+                <td class="insights-table__column col-4">
+                  <span class="insights-table__product-text">
+                    Eletrônicos
+                  </span>
+                </td>
+                <td class="insights-table__column col-5">
+                  <span class="insights-table__product-text">
+                    R$ 2.999,00
+                  </span>
+                </td>
+              </tr>
+              <tr class="insights-table__trow">
+                <td class="insights-table__column col-1">
+                  <span class="insights-table__product-indice">
+                    4
+                  </span>
+                </td>
+                <td class="insights-table__column col-2">
+                  <span class="insights-table__product-description">
+                    <img src="./assets/images/product-image-01.png" alt="Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...">
+                    Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...
+                  </span>
+                </td>
+                <td class="insights-table__column col-3">
+                  <span class="insights-table__product-text">
+                    #912304817412-3
+                  </span>
+                </td>
+                <td class="insights-table__column col-4">
+                  <span class="insights-table__product-text">
+                    Eletrônicos
+                  </span>
+                </td>
+                <td class="insights-table__column col-5">
+                  <span class="insights-table__product-text">
+                    R$ 2.999,00
+                  </span>
+                </td>
+              </tr>
+              <tr class="insights-table__trow">
+                <td class="insights-table__column col-1">
+                  <span class="insights-table__product-indice">
+                    5
+                  </span>
+                </td>
+                <td class="insights-table__column col-2">
+                  <span class="insights-table__product-description">
+                    <img src="./assets/images/product-image-01.png" alt="Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...">
+                    Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...
+                  </span>
+                </td>
+                <td class="insights-table__column col-3">
+                  <span class="insights-table__product-text">
+                    #912304817412-3
+                  </span>
+                </td>
+                <td class="insights-table__column col-4">
+                  <span class="insights-table__product-text">
+                    Eletrônicos
+                  </span>
+                </td>
+                <td class="insights-table__column col-5">
+                  <span class="insights-table__product-text">
+                    R$ 2.999,00
+                  </span>
+                </td>
+              </tr>
+              <tr class="insights-table__trow">
+                <td class="insights-table__column col-1">
+                  <span class="insights-table__product-indice">
+                    6
+                  </span>
+                </td>
+                <td class="insights-table__column col-2">
+                  <span class="insights-table__product-description">
+                    <img src="./assets/images/product-image-01.png" alt="Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...">
+                    Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...
+                  </span>
+                </td>
+                <td class="insights-table__column col-3">
+                  <span class="insights-table__product-text">
+                    #912304817412-3
+                  </span>
+                </td>
+                <td class="insights-table__column col-4">
+                  <span class="insights-table__product-text">
+                    Eletrônicos
+                  </span>
+                </td>
+                <td class="insights-table__column col-5">
+                  <span class="insights-table__product-text">
+                    R$ 2.999,00
+                  </span>
+                </td>
+              </tr>
+              <tr class="insights-table__trow">
+                <td class="insights-table__column col-1">
+                  <span class="insights-table__product-indice">
+                    7
+                  </span>
+                </td>
+                <td class="insights-table__column col-2">
+                  <span class="insights-table__product-description">
+                    <img src="./assets/images/product-image-01.png" alt="Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...">
+                    Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...
+                  </span>
+                </td>
+                <td class="insights-table__column col-3">
+                  <span class="insights-table__product-text">
+                    #912304817412-3
+                  </span>
+                </td>
+                <td class="insights-table__column col-4">
+                  <span class="insights-table__product-text">
+                    Eletrônicos
+                  </span>
+                </td>
+                <td class="insights-table__column col-5">
+                  <span class="insights-table__product-text">
+                    R$ 2.999,00
+                  </span>
+                </td>
+              </tr>
+              <tr class="insights-table__trow">
+                <td class="insights-table__column col-1">
+                  <span class="insights-table__product-indice">
+                    8
+                  </span>
+                </td>
+                <td class="insights-table__column col-2">
+                  <span class="insights-table__product-description">
+                    <img src="./assets/images/product-image-01.png" alt="Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...">
+                    Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...
+                  </span>
+                </td>
+                <td class="insights-table__column col-3">
+                  <span class="insights-table__product-text">
+                    #912304817412-3
+                  </span>
+                </td>
+                <td class="insights-table__column col-4">
+                  <span class="insights-table__product-text">
+                    Eletrônicos
+                  </span>
+                </td>
+                <td class="insights-table__column col-5">
+                  <span class="insights-table__product-text">
+                    R$ 2.999,00
+                  </span>
+                </td>
+              </tr>
+              <tr class="insights-table__trow">
+                <td class="insights-table__column col-1">
+                  <span class="insights-table__product-indice">
+                    9
+                  </span>
+                </td>
+                <td class="insights-table__column col-2">
+                  <span class="insights-table__product-description">
+                    <img src="./assets/images/product-image-01.png" alt="Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...">
+                    Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB Placa de Vídeo GT 730 2GB...
+                  </span>
+                </td>
+                <td class="insights-table__column col-3">
+                  <span class="insights-table__product-text">
+                    #912304817412-3
+                  </span>
+                </td>
+                <td class="insights-table__column col-4">
+                  <span class="insights-table__product-text">
+                    Eletrônicos
+                  </span>
+                </td>
+                <td class="insights-table__column col-5">
+                  <span class="insights-table__product-text">
+                    R$ 2.999,00
+                  </span>
+                </td>
+              </tr>
+              <tr class="insights-table__trow">
+                <td class="insights-table__column col-1">
+                  <span class="insights-table__product-indice">
+                    10
                   </span>
                 </td>
                 <td class="insights-table__column col-2">
