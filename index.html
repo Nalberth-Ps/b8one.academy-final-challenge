@@ -13,7 +13,6 @@
 
   <link rel="stylesheet" href="./assets/css/normalize.css">
   <link rel="stylesheet" href="./assets/css/dashboard.css">
-  <link rel="stylesheet" href="./assets/css/responsiveRules.css">
 </head>
 <body>
   <header class="header">
@@ -38,11 +37,11 @@
             <path d="M9.09003 9.00002C9.32513 8.33169 9.78918 7.76813 10.4 7.40915C11.0108 7.05018 11.7289 6.91896 12.4272 7.03873C13.1255 7.15851 13.7588 7.52154 14.2151 8.06355C14.6714 8.60555 14.9211 9.29154 14.92 10C14.92 12 11.92 13 11.92 13" stroke="#142159" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M12 17H12.0094" stroke="#142159" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <div class="dropdown__help">
-            <span class="dropdown-help__text">
+          <div class="dropdown__help dropdown-menu">
+            <span class="dropdown-menu__text dropdown-help__text">
               Central de Ajuda
             </span>
-            <span class="dropdown-help__text">
+            <span class="dropdown-menu__text dropdown-help__text">
               Tutoriais
             </span>
             <span class="dropdown-help__highlight-text">
@@ -56,7 +55,7 @@
             <path d="M13.5859 20.1028C13.4248 20.3756 13.1934 20.6021 12.9151 20.7595C12.6368 20.9169 12.3213 20.9998 12.0001 20.9998C11.6789 20.9998 11.3634 20.9169 11.085 20.7595C10.8067 20.6021 10.5754 20.3756 10.4142 20.1028" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <span class="user-actions-item__notification-circle user-actions-item__notification-circle--active"></span>
-          <div class="dropdown__notification">
+          <div class="dropdown__notification dropdown-menu">
             <div class="dropdown-notification__header">
               <div class="hand-icon__wrapper">
                 <img src="./assets/images/hand-icon.svg" alt="Icone de uma mão">
@@ -74,7 +73,7 @@
             </span>
             <div class="dropdown-notification__introduction-progress">
               <div class="introduction-progress">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="introduction-progress__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="20" height="20" rx="4" fill="#425DC7"/>
                   <path d="M14.5834 7.08325L8.28127 12.9166L5.41669 10.2651" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -122,14 +121,14 @@
               Gustavo Silva
             </span>
           </div>
-          <div class="user__menu">
-            <h3 class="user-menu__title">
+          <div class="dropdown__user dropdown-menu">
+            <h3 class="dropdown-user__title">
               Olá, <span class="user__highlight">Gustavo</span> 👋
             </h3>
-            <span class="user-menu__text">
+            <span class="dropdown-menu__text">
               Minha Conta
             </span>
-            <span class="user-menu__text">
+            <span class="dropdown-menu__text">
               Sair
             </span>
           </div>
