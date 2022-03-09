@@ -1,5 +1,9 @@
 import initDropdownMenu from "./modules/dropdown-menu.js";
-import initChart from "./modules/chart.js";
+import initReportWidth from "./modules/chartWidth.js";
+import initUser from "./modules/user-data.js";
+import initTablePopulation from "./modules/populate-table.js";
 
 initDropdownMenu();
-initChart();
+initReportWidth();
+initUser();
+initTablePopulation();

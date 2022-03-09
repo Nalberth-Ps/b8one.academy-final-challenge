@@ -492,10 +492,6 @@
   padding-bottom: 16px;
 }
 
-.nav__item--selected .dropdown__list {
-  max-height: 300px;
-}
-
 .dropdown__link {
   display: block;
   padding: 12px 0 12px 27px;
@@ -512,10 +508,6 @@
 .dropdown__link--selected {
   color: var(--purple-light);
   border-color: var(--purple-light);
-}
-
-.nav__item--selected .nav__dropdown-icon {
-  transform: rotate(180deg);
 }
 
 /* Upgrade account */
@@ -706,10 +698,6 @@
   width: 100%;
 }
 
-.general-report--resize {
-  width: min(100%, calc(100% - 404px));
-}
-
 .general-report__header {
   display: flex;
   align-items: center;
@@ -773,236 +761,11 @@
 
 /* Chart */
 
-.data-cards-sells__list {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 0 16px;
-  margin-top: 7px;
-  margin-bottom: 48px;
-  overflow-x: scroll;
-  animation: show-up 0.5s forwards;
-}
-
-.data-cards-sells__list::-webkit-scrollbar {
-  display: none;
-}
-
-.data-cards-sells__item {
-  flex-grow: 1;
-}
-
-.data-card-sells {
-  display: flex;
-  align-items: center;
-  gap: 0 16px;
-  white-space: nowrap;
-  background: var(--neutral);
-  border: 2px solid var(--primary-low);
-  border-radius: 12px;
-  padding: 10px;
-}
-
-.data-card-sells__icon-wrapper {
-  line-height: 0;
-  padding: 8px;
-  background: var(--primary-low);
-  border-radius: 12px;
-}
-
-.data-card-sells__description {
-  display: block;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  color: var(--neutral-medium);
-}
-
-.data-card-sells__value {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.005em;
-  color: var(--neutral-low);
-}
-
-.resells-select {
-  width: min(100%, 280px);
-  padding: 9.5px 16px;
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--primary);
-  letter-spacing: -0.005em;
-  border-radius: 8px;
-  border: 1px solid #999999;
-  animation: show-up 0.5s forwards;
-}
-
-.resells-select[--nth-word="1"] {
-  color: #999999;
-}
-
-.resells-select:hover {
-  padding: 8.5px 15px;
-  border: 2px solid var(--purple-light);
-}
-
 /* General report right side */
-
-.general-report--right {
-  width: min(100%, 340px);
-  align-self: flex-start;
-  padding: 22px;
-  border: 2px solid #f1f2f9;
-  border-radius: 8px;
-  animation: show-up 0.5s forwards;
-}
-
-.resells-ranking__header {
-  display: flex;
-  align-items: center;
-  gap: 0 12px;
-  margin-bottom: 24px;
-}
-
-.resells-ranking__image-wrapper {
-  line-height: 0;
-}
-
-.resells-ranking__title {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--primary);
-}
 
 /* resells list */
 
-.resells-ranking__list {
-  width: 100%;
-  height: 244px;
-  margin-bottom: 24px;
-  padding-right: 16px;
-  overflow-y: auto;
-}
-
-.resells-ranking__list::-webkit-scrollbar {
-  width: 4px;
-}
-
-.resell-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0 16px;
-}
-
-.resell__indice {
-  width: 24px;
-  height: 24px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--primary);
-}
-
-.resell-info-wrapper {
-  width: min(100%, 232px);
-  display: flex;
-  align-items: center;
-  gap: 0 16px;
-}
-
-.resell-info {
-  padding: 6px 0;
-}
-
-.resells-ranking__item,
-.resell-info {
-  width: 100%;
-}
-
-.resell__name {
-  display: block;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--primary);
-}
-
-.resell-orders-wrapper,
-.resell-orders__percentage {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.resell-orders__percentage {
-  gap: 0 2px;
-}
-
-.resell__orders {
-  display: inline-block;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-  color: var(--neutral-medium);
-}
-
-.resell-orders__percentage {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: -0.005em;
-}
-
-.resell-orders__percentage--success {
-  color: var(--feedback-success);
-}
-
-.resell-orders__percentage--negative {
-  color: var(--feedback-helper);
-}
-
-.see-all-button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-top: 23px;
-  border-top: 2px solid var(--primary-low);
-}
-
-.resells-ranking__see-all {
-  padding: 6.5px 14.5px;
-  border: 1.5px solid var(--purple-light);
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 24px;
-  color: var(--purple-light);
-  transition: all 0.3s ease;
-}
-
-.resells-ranking__see-all:hover {
-  background: var(--purple-light);
-  color: var(--neutral);
-}
-
-.resells-select ~ .chart-wrapper {
-  margin-top: 24px;
-  height: 291px;
-}
-
 /* Chart */
-
-.chart-wrapper {
-  width: 100%;
-  height: 323px;
-  margin-top: 32px;
-}
-
-.data-cards-sells__list + .chart-wrapper {
-  height: 228px;
-}
 
 /* Insights Section */
 
@@ -1280,15 +1043,6 @@
   .general-report--left {
     width: 100%;
   }
-
-  .general-report--right {
-    margin: 0 auto;
-    padding: 16px;
-  }
-
-  .see-all-button-wrapper {
-    padding-top: 15px;
-  }
 }
 
 @media screen and (max-width: 490px) {
@@ -1305,8 +1059,7 @@
   }
 
   .dropdown__help,
-  .dropdown__notification,
-  .dropdown__menu {
+  .dropdown__notification {
     display: none;
   }
 
@@ -1331,10 +1084,6 @@
 
   .general-report__label {
     font-size: 14px;
-  }
-
-  .resells-ranking__header {
-    margin-bottom: 16px;
   }
 
   .insights__navbar {
