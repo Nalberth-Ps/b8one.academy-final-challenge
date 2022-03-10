@@ -1,35 +1,18 @@
-export default function initChart() {
-  //   Chart.defaults.global.legend.labels.usePointStyle = true;
-  const labels = ["January", "February", "March", "April", "May", "June"];
+export default function initChart(chartData) {
+  const labels = chartData.days;
+  let labelDatasets = [];
+  for (let i = 0; i < chartData.length; i++) {
+    labelDatasets.push({
+      label: chartData[i].label,
+      backgroundColor: chartData[i].color,
+      borderColor: chartData[i].color,
+      data: chartData[i].data,
+    });
+  }
+
   const data = {
     labels: labels,
-    datasets: [
-      {
-        label: "Estornado",
-        backgroundColor: "rgba(66, 93, 199, 1)",
-        borderColor: "rgba(66, 93, 199, 1)",
-        data: [0, 10, 5, 2, 20, 30],
-      },
-      {
-        label: "Cancelado",
-        backgroundColor: "rgba(240, 52, 96, 1)",
-        borderColor: "rgba(240, 52, 96, 1)",
-        data: [0, 7, 4, 8, 30, 12, 15],
-      },
-      {
-        label: "Não Pago",
-        backgroundColor: "rgba(255, 190, 0, 1)",
-        borderColor: "rgba(255, 190, 0, 1)",
-        borderRadius: "100px",
-        data: [2, 0, 3, 2, 4, 5, 1],
-      },
-      {
-        label: "Pago",
-        backgroundColor: "rgba(46, 176, 66, 1)",
-        borderColor: "rgba(46, 176, 66, 1)",
-        data: [0, 10, 15, 13, 8, 13, 14],
-      },
-    ],
+    datasets: labelDatasets,
   };
 
   const config = {
@@ -48,6 +31,10 @@ export default function initChart() {
       },
       scales: {
         x: {
+          beginAtZero: true,
+          ticks: {
+            maxTicksLimit: getTicksAmount(),
+          },
           grid: {
             drawBorder: false,
             drawOnChartArea: false,
@@ -81,3 +68,11 @@ export default function initChart() {
 
   const myChart = new Chart(document.getElementById("myChart"), config);
 }
+
+function getTicksAmount() {
+  const screenSize = window.screen.width;
+  if (screenSize > 490) return 15;
+  else return 7;
+}
+
+getTicksAmount();

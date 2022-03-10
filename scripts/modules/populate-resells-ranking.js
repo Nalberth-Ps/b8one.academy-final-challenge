@@ -1,11 +1,10 @@
-const resellsUrl = "https://test-final.b8one.academy/resellers/ranking";
-
 export default async function initResellsRankingPopulation() {
-  const data = await fetchData();
+  const data = await fetchResellsData();
   return populateResellsRanking(data.resellers);
 }
 
-async function fetchData() {
+async function fetchResellsData() {
+  const resellsUrl = "https://test-final.b8one.academy/resellers/ranking";
   const response = await (await fetch(resellsUrl)).json();
   return response;
 }
@@ -25,6 +24,14 @@ function populateResellsRanking(resellers) {
     `;
 
   resellers.forEach((reseller, index) => {
+    const resellerFirstLetter = reseller.name
+      .split(" ")
+      .filter((item) => !["de", "da", "das", "do", "dos"].includes(item))
+      .map((item) => item[0])
+      .join("")
+      .substring(0, 2)
+      .toUpperCase();
+
     resellersRankingContent += `
     <li class="resells-ranking__item">
       <div class="resell-wrapper">
@@ -32,9 +39,9 @@ function populateResellsRanking(resellers) {
           ${index + 1}°
         </span>
         <div class="resell-info-wrapper">
-          <div class="resell-info__image-wrapper">
-            <img src="./assets/images/resell-icon.png" alt="Avatar Revendedor" class="resell-info__image">
-          </div>
+        <span class="avatar-circle__icon reseller-avatar">
+          ${resellerFirstLetter}
+        </span>
         <div class="resell-info">
           <span class="resell__name">
             ${reseller.name}
@@ -72,7 +79,7 @@ function salesSuccess(percentage) {
       ${orderPercentage}
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10.9998 9.5L7.99976 6.5L4.99976 9.5" stroke="#158F2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>                           
+      </svg>
     </span>`;
 
   const orderPercentageContentNegative = `
@@ -80,7 +87,7 @@ function salesSuccess(percentage) {
         ${orderPercentage}
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M5.00024 6.5L8.00024 9.5L11.0002 6.5" stroke="#EB0045" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>                           
+        </svg>
       </span>
     `;
 

@@ -105,6 +105,7 @@
 
 .user-actions__item {
   position: relative;
+  line-height: 0;
 }
 
 .user-actions-item__notification-circle {
@@ -531,6 +532,11 @@
   border-radius: 12px;
 }
 
+.upgrade-image__wrapper {
+  width: 32px;
+  height: 32px;
+}
+
 .sidebar-upgrade__description {
   font-weight: 500;
   font-size: 14px;
@@ -771,6 +777,19 @@
   border-top: 1px solid var(--neutral-light);
 }
 
+.loader {
+  height: 355px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: show-up 0.1s forwards;
+}
+
+.loader__icon path,
+.loader__icon rect {
+  fill: var(--purple-light);
+}
+
 /* Chart */
 
 .data-cards-sells__list {
@@ -891,14 +910,13 @@
 }
 
 .resell-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0 16px;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  place-items: center;
+  gap: 16px;
 }
 
 .resell__indice {
-  width: 24px;
-  height: 24px;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -907,9 +925,10 @@
 
 .resell-info-wrapper {
   width: min(100%, 232px);
-  display: flex;
-  align-items: center;
-  gap: 0 16px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  place-items: center;
+  gap: 16px;
 }
 
 .resell-info {
@@ -919,6 +938,32 @@
 .resells-ranking__item,
 .resell-info {
   width: 100%;
+}
+
+.avatar-circle__icon {
+  background: var(--primary-low);
+  color: var(--purple-light);
+  text-align: center;
+  border-radius: 100px;
+}
+
+.reseller-avatar {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.company-logo {
+  width: 32px;
+  height: 32px;
+  padding: 8px 5px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
 }
 
 .resell__name {
@@ -1080,6 +1125,7 @@
   line-height: 16px;
   text-align: center;
   color: var(--purple-light);
+  margin: 0 auto;
 }
 
 .insights-table__product-description {
@@ -1198,7 +1244,7 @@
 
   .main {
     width: 100%;
-    padding: 15px;
+    padding: 16px;
   }
 
   .insights-table__trow {
@@ -1311,7 +1357,7 @@
   }
 
   .release {
-    padding: 18px 20px 18px 22px;
+    padding: 18px 20px;
   }
 
   .release__description {
@@ -1335,6 +1381,10 @@
 
   .resells-ranking__header {
     margin-bottom: 16px;
+  }
+
+  .insights-table__product-text {
+    padding: 0;
   }
 
   .insights__navbar {

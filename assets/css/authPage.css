@@ -188,7 +188,7 @@ body {
 
 /* Submit Button */
 
-.card-bottom__submit {
+.card-button__submit {
   width: 100%;
   height: 48px;
   background: var(--purple-light);

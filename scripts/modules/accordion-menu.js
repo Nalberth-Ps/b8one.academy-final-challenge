@@ -1,13 +1,13 @@
-const dropdownMenus = document.querySelectorAll("[data-dropdown]");
-export default function initDropdownMenu() {
+export default function handleAccordionMenuAnimation() {
+  const dropdownMenus = document.querySelectorAll("[data-dropdown]");
   dropdownMenus.forEach((menu) => {
     ["touchstart", "click"].forEach((userEvent) => {
-      menu.addEventListener(userEvent, handleClick);
+      menu.addEventListener(userEvent, handleAccordionMenuClick);
     });
   });
 }
 
-function handleClick(event) {
+function handleAccordionMenuClick(event) {
   event.preventDefault();
   const activeMenu = this;
   closeOpenDropdowns(activeMenu);
@@ -15,6 +15,7 @@ function handleClick(event) {
 }
 
 function closeOpenDropdowns(activeMenu) {
+  const dropdownMenus = document.querySelectorAll("[data-dropdown]");
   dropdownMenus.forEach((menu) => {
     if (menu.innerHTML === activeMenu.innerHTML) return;
     menu.classList.remove("nav__item--selected");

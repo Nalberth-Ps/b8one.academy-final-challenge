@@ -1,23 +1,33 @@
-const userDataUrl = "https://test-final.b8one.academy/user";
-
 export default async function initUser() {
   const data = await fetchData();
   setCompanyData(data.organization);
   setUserData(data);
 }
 async function fetchData() {
+  const userDataUrl = "https://test-final.b8one.academy/user";
   const response = await (await fetch(userDataUrl)).json();
   return response;
 }
 
-function setCompanyData(username) {
-  const companyDiv = document.querySelector(".company");
+function setCompanyData(companyName) {
+  const companyInitialLetters = companyName
+    .split(" ")
+    .filter((item) => !["de", "da", "das", "do", "dos"].includes(item))
+    .map((item) => item[0])
+    .join("")
+    .substring(0, 2)
+    .toUpperCase();
+
   const companyData = `
-  <img class="company__logo" src="./assets/images/company-logo.png" alt="Logo da Empresa">
+  <span class="avatar-circle__icon company-logo">
+          ${companyInitialLetters}
+        </span>
   <span class="company__name">
-     ${username}
+  ${companyName}
   </span>
-    `;
+  `;
+
+  const companyDiv = document.querySelector(".company");
   companyDiv.insertAdjacentHTML("afterbegin", companyData);
 }
 

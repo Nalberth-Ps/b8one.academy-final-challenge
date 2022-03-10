@@ -1,19 +1,17 @@
-const productsUrl = "https://test-final.b8one.academy/products/more-sold";
-
 export default async function initTablePopulation() {
-  const data = await fetchData();
+  const data = await fetchProductsData();
   populateTable(data.products);
 }
 
-async function fetchData() {
+async function fetchProductsData() {
+  const productsUrl = "https://test-final.b8one.academy/products/more-sold";
   const response = await (await fetch(productsUrl)).json();
   return response;
 }
 
 function populateTable(products) {
-  const tbody = document.querySelector(".insights-table__body");
   const productsArrayHtml = products.map((product, index) => {
-    let priceInBRL = product.price.toLocaleString("pt-br", {
+    const priceInBRL = product.price.toLocaleString("pt-br", {
       style: "currency",
       currency: "BRL",
     });
@@ -27,9 +25,7 @@ function populateTable(products) {
           </td>
           <td class="insights-table__column col-2">
               <span class="insights-table__product-description">
-              <img src="./assets/images/product-image-01.png" alt="${
-                product.name
-              }">
+              <img src="${product.image}" alt="${product.name}">
               ${product.name}
               </span>
           </td>
@@ -54,5 +50,6 @@ function populateTable(products) {
 
   const productsHtml = productsArrayHtml.join(" ");
 
+  const tbody = document.querySelector(".insights-table__body");
   tbody.insertAdjacentHTML("beforeend", productsHtml);
 }
