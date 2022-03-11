@@ -25,7 +25,9 @@ function populateTable(products) {
           </td>
           <td class="insights-table__column col-2">
               <span class="insights-table__product-description">
-              <img src="${product.image}" alt="${product.name}">
+              <img src="${product.image}" alt="${
+      product.name
+    }" referrerpolicy="no-referrer">
               ${product.name}
               </span>
           </td>

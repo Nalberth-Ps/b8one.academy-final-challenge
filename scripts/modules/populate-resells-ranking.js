@@ -23,14 +23,8 @@ function populateResellsRanking(resellers) {
     <ul class="resells-ranking__list">
     `;
 
-  resellers.forEach((reseller, index) => {
-    const resellerFirstLetter = reseller.name
-      .split(" ")
-      .filter((item) => !["de", "da", "das", "do", "dos"].includes(item))
-      .map((item) => item[0])
-      .join("")
-      .substring(0, 2)
-      .toUpperCase();
+  resellers.forEach(({ name, ordersCount, percentage }, index) => {
+    const resellerInitials = getInitials(name);
 
     resellersRankingContent += `
     <li class="resells-ranking__item">
@@ -40,17 +34,17 @@ function populateResellsRanking(resellers) {
         </span>
         <div class="resell-info-wrapper">
         <span class="avatar-circle__icon reseller-avatar">
-          ${resellerFirstLetter}
+          ${resellerInitials}
         </span>
         <div class="resell-info">
           <span class="resell__name">
-            ${reseller.name}
+            ${name}
           </span>
           <div class="resell-orders-wrapper">
             <span class="resell__orders">
-              ${reseller.ordersCount} pedidos
+              ${ordersCount} pedidos
             </span>
-            ${salesSuccess(reseller.percentage)}
+            ${salesSuccess(percentage)}
           </div>
         </div>
       </div>
@@ -94,4 +88,14 @@ function salesSuccess(percentage) {
   return percentage.charAt(0) === "+"
     ? orderPercentageContentSuccess
     : orderPercentageContentNegative;
+}
+
+function getInitials(resellerName) {
+  return resellerName
+    .split(" ")
+    .filter((item) => !["de", "da", "das", "do", "dos"].includes(item))
+    .map((item) => item[0])
+    .join("")
+    .substring(0, 2)
+    .toUpperCase();
 }

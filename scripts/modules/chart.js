@@ -66,7 +66,8 @@ export default function initChart(chartData) {
     },
   };
 
-  const myChart = new Chart(document.getElementById("myChart"), config);
+  const chartWrapper = document.getElementById("myChart");
+  const myChart = new Chart(chartWrapper, config);
 }
 
 function getTicksAmount() {

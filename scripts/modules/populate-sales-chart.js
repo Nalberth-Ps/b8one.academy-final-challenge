@@ -25,19 +25,19 @@ function populateSales(sales) {
   });
 }
 
-function populateCards(cardContent) {
+function populateCards({ name, icon, number }) {
   let cardContentHTML = `
     <li class="data-cards-sells__item">
       <div class="data-card-sells">
         <div class="data-card-sells__icon-wrapper">
-            ${cardContent.icon}
+            ${icon}
         </div>
         <div class="data-card-sells__text-wrapper">
           <span class="data-card-sells__description">
-            ${cardContent.name}
+            ${name}
           </span>
           <span class="data-card-sells__value">
-            ${cardContent.number}
+            ${number}
           </span>
         </div>               
       </div>

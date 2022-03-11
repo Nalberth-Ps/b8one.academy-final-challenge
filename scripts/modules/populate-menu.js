@@ -1,7 +1,10 @@
+import handleAccordionMenuAnimation from "./accordion-menu.js";
+
 export default async function initAccordionMenu() {
   const menuData = await fetchAccordionMenu();
 
   accordionMenuData(menuData.menuTree);
+  handleAccordionMenuAnimation();
 }
 
 async function fetchAccordionMenu() {
@@ -12,9 +15,9 @@ async function fetchAccordionMenu() {
 
 function accordionMenuData(menuTree) {
   const menuIconsHTML = {
-    resumodedados(menuItem) {
+    resumodedados({ name, hasChildren }) {
       return {
-        name: menuItem.name,
+        name,
         icon: `
           <svg class="nav__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10.5 3.75H3.75V10.5H10.5V3.75Z" fill="#425DC7" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -23,12 +26,12 @@ function accordionMenuData(menuTree) {
             <path d="M10.5 13.5H3.75V20.25H10.5V13.5Z" fill="#CDD2EB" stroke="#CDD2EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         `,
-        hasChildren: menuItem.hasChildren,
+        hasChildren,
       };
     },
-    pravender(menuItem) {
+    pravender({ name, hasChildren }) {
       return {
-        name: menuItem.name,
+        name,
         icon: `
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M10.087 2.02852C11.1249 0.927887 12.8751 0.927887 13.913 2.02852V2.02852C14.5279 2.68061 15.4326 2.97456 16.3133 2.80843V2.80843C17.7999 2.52803 19.2159 3.55679 19.4086 5.05724V5.05724C19.5228 5.94621 20.0819 6.7158 20.8921 7.09907V7.09907C22.2596 7.74599 22.8004 9.41058 22.0744 10.7377V10.7377C21.6442 11.524 21.6442 12.4753 22.0744 13.2616V13.2616C22.8004 14.5887 22.2596 16.2533 20.8921 16.9002V16.9002C20.0819 17.2835 19.5228 18.0531 19.4086 18.9421V18.9421C19.2159 20.4425 17.7999 21.4713 16.3133 21.1909V21.1909C15.4326 21.0247 14.5279 21.3187 13.913 21.9708V21.9708C12.8751 23.0714 11.1249 23.0714 10.087 21.9708V21.9708C9.47213 21.3187 8.56741 21.0247 7.68666 21.1909V21.1909C6.2001 21.4713 4.7841 20.4425 4.59141 18.9421V18.9421C4.47724 18.0531 3.91809 17.2835 3.1079 16.9002V16.9002C1.74043 16.2533 1.19956 14.5887 1.92562 13.2616V13.2616C2.35579 12.4753 2.35579 11.524 1.92562 10.7377V10.7377C1.19956 9.41058 1.74043 7.74599 3.1079 7.09907V7.09907C3.91809 6.7158 4.47724 5.94621 4.59141 5.05724V5.05724C4.7841 3.55679 6.2001 2.52803 7.68666 2.80843V2.80843C8.56741 2.97456 9.47213 2.68061 10.087 2.02852V2.02852Z" fill="#CDD2EB"/>
@@ -37,12 +40,12 @@ function accordionMenuData(menuTree) {
           <path d="M16.05 15.5996C16.05 16.5109 15.3113 17.2496 14.4 17.2496C13.4887 17.2496 12.75 16.5109 12.75 15.5996C12.75 14.6884 13.4887 13.9496 14.4 13.9496C15.3113 13.9496 16.05 14.6884 16.05 15.5996Z" stroke="#425DC7" stroke-width="1.5"/>
         </svg>
         `,
-        hasChildren: menuItem.hasChildren,
+        hasChildren,
       };
     },
-    pedidos(menuItem) {
+    pedidos({ name, hasChildren }) {
       return {
-        name: menuItem.name,
+        name,
         icon: `
         <svg class="nav__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6.625 2.99963L3.75 6.59958V19.1994C3.75 19.6768 3.95193 20.1346 4.31138 20.4722C4.67082 20.8097 5.15833 20.9994 5.66667 20.9994H19.0833C19.5917 20.9994 20.0792 20.8097 20.4386 20.4722C20.7981 20.1346 21 19.6768 21 19.1994V6.59958L18.125 2.99963H6.625Z" fill="#CDD2EB" stroke="#CDD2EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -50,12 +53,12 @@ function accordionMenuData(menuTree) {
           <path d="M16.2086 10.1994C16.2086 11.1549 15.8047 12.0713 15.0858 12.7469C14.3669 13.4225 13.3919 13.8021 12.3753 13.8021C11.3586 13.8021 10.3836 13.4225 9.66469 12.7469C8.9458 12.0713 8.54193 11.1549 8.54193 10.1994" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>   
         `,
-        hasChildren: menuItem.hasChildren,
+        hasChildren,
       };
     },
-    financeiro(menuItem) {
+    financeiro({ name, hasChildren }) {
       return {
-        name: menuItem.name,
+        name,
         icon: `
         <svg class="nav__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 21.9992C17.5228 21.9992 22 17.5221 22 11.9994C22 6.4766 17.5228 1.99951 12 1.99951C6.47715 1.99951 2 6.4766 2 11.9994C2 17.5221 6.47715 21.9992 12 21.9992Z" fill="#CDD2EB" stroke="#CDD2EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -64,12 +67,12 @@ function accordionMenuData(menuTree) {
           <path d="M12 15.9993L12 17.9993" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>   
         `,
-        hasChildren: menuItem.hasChildren,
+        hasChildren,
       };
     },
-    configurações(menuItem) {
+    configurações({ name, hasChildren }) {
       return {
-        name: menuItem.name,
+        name,
         icon: `
         <svg class="nav__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_241_3999)">
@@ -83,12 +86,12 @@ function accordionMenuData(menuTree) {
           </defs>
         </svg>               
         `,
-        hasChildren: menuItem.hasChildren,
+        hasChildren,
       };
     },
-    ferramentas(menuItem) {
+    ferramentas({ name, hasChildren }) {
       return {
-        name: menuItem.name,
+        name,
         icon: `
         <svg class="nav__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M10.5 3.74915H3.75V10.4991H10.5V3.74915Z" fill="#425DC7" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -97,7 +100,7 @@ function accordionMenuData(menuTree) {
           <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8447 10.2522C17.8447 10.6664 17.5089 11.0022 17.0947 11.0022C16.6805 11.0022 16.3447 10.6664 16.3447 10.2522L16.3447 7.74915H14C13.5858 7.74915 13.25 7.41336 13.25 6.99915C13.25 6.58493 13.5858 6.24915 14 6.24915H16.3447L16.3447 3.74915C16.3447 3.33493 16.6805 2.99915 17.0947 2.99915C17.5089 2.99915 17.8447 3.33493 17.8447 3.74915V6.24915H20.5031C20.9173 6.24915 21.2531 6.58493 21.2531 6.99915C21.2531 7.41336 20.9173 7.74915 20.5031 7.74915H17.8447V10.2522Z" fill="#425DC7"/>
         </svg>               
         `,
-        hasChildren: menuItem.hasChildren,
+        hasChildren,
       };
     },
   };
@@ -109,22 +112,22 @@ function accordionMenuData(menuTree) {
   });
 }
 
-function populateAccordionMenu(menuContent) {
+function populateAccordionMenu({ name, icon, hasChildren }) {
   const navDropdownIconHTML = `
   <svg class="nav__dropdown-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.50024 9.74963L12.0002 14.2496L16.5002 9.74963" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
   `;
 
-  const menuComplementData = verifyMenuChildren(menuContent.hasChildren);
+  const menuComplementData = verifyMenuChildren(hasChildren);
   if (menuComplementData === undefined) menuComplementData = "";
 
   const menuContentHTML = `
   <li class="nav__item " ${menuComplementData.dataAttribute}>
     <a href="#" class="nav__link">    
-      ${menuContent.icon}                             
-      ${menuContent.name}
-      ${menuContent.hasChildren ? navDropdownIconHTML : ""}
+      ${icon}                             
+      ${name}
+      ${hasChildren ? navDropdownIconHTML : ""}
       </a>
     ${menuComplementData.content}             
 </li>

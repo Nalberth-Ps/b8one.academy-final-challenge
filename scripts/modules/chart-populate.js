@@ -16,13 +16,13 @@ export default async function chartPopulate() {
 }
 
 let currentChart = document.querySelector(".general-report__input:checked");
-function handleChartClick(event) {
-  if (event.target.value === currentChart) return;
+function handleChartClick({ target: { value } }) {
+  if (value === currentChart) return;
 
-  if (event.target.value == "resellers") resellersChart();
-  else if (event.target.value == "sells") salesChart();
-  else if (event.target.value == "orders") ordersChart();
-  currentChart = event.target.value;
+  if (value === "resellers") resellersChart();
+  else if (value === "sells") salesChart();
+  else if (value === "orders") ordersChart();
+  currentChart = value;
 }
 
 function defaultWidth() {
@@ -114,10 +114,13 @@ async function resellersChart() {
   if (resellersRanking !== null) resellersRanking.remove();
 
   chartWrapper.innerHTML = loadingAnimation();
-  const resellersContent = `<div class="resells-select-wrapper">
-  <select class="resells-select" name="resells" id="resells">
-    <option value="" selected disabled>Mostrar todos os revendedores</option>
-  </select>
+  const resellersContent = `
+  <div class="resells-select-wrapper">
+    <select class="resells-select" name="resells" id="resells">
+      <option value="" selected>Mostrar todos os revendedores</option>
+      ${await selectResellers()}
+    </select>
+  </div>
   <div class="chart-wrapper">
     <canvas id="myChart"></canvas>
   </div>
@@ -205,8 +208,8 @@ function initDateTimeInterval() {
   });
 }
 
-function chartPopulateDate({ target }) {
-  if (target.value == "on") return;
+function chartPopulateDate({ target: { value } }) {
+  if (value == "on") return;
 
   let currentChart = document.querySelector(
     ".general-report__input:checked"
@@ -232,4 +235,25 @@ function generateRandomData() {
     randomNumber.push(getRandomNumber());
   }
   return randomNumber;
+}
+
+async function fetchResellsData() {
+  const resellsUrl = "https://test-final.b8one.academy/resellers/ranking";
+  const response = await (await fetch(resellsUrl)).json();
+  return response;
+}
+
+async function selectResellers() {
+  const data = await fetchResellsData();
+
+  const resellers = data.resellers;
+  let resellerSelectContent = ``;
+
+  resellers.forEach((reseller) => {
+    resellerSelectContent += `
+    <option value="${reseller.name}">${reseller.name}</option>
+    `;
+  });
+
+  return resellerSelectContent;
 }
