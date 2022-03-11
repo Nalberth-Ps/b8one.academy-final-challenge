@@ -8,7 +8,7 @@ Reprodução do <a href="https://www.figma.com/file/F4d4sysbY6agIpFk0sHLMr/Prova
 
 ## 🎨 Preview
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/55766123/157788521-7ab474f1-c92e-41bb-b83b-0e170b200e74.png" width="700px"/>
+  <img src="https://user-images.githubusercontent.com/55766123/157949966-5f9a1c1a-60a1-4fc9-9a0f-0747532c3dfa.png" width="700px"/>
 </div>
 
 ---
@@ -16,7 +16,7 @@ Reprodução do <a href="https://www.figma.com/file/F4d4sysbY6agIpFk0sHLMr/Prova
 ## ⚙️ Funcionalidades
 
 <ul>
-  <li>Dados adquiridos via <a href="https://github.com/b8one-academy/dashboard-teste-final">API</a> disponibilizada:</li>
+  <li>Aquisição de dados via <a href="https://github.com/b8one-academy/dashboard-teste-final">API</a> disponibilizada:</li>
     <ul>
       <li>Informações do usuário;</li>
       <li>Nome dos menus;</li>
@@ -24,14 +24,16 @@ Reprodução do <a href="https://www.figma.com/file/F4d4sysbY6agIpFk0sHLMr/Prova
       <li>Ranking de melhores revendedores;</li>
       <li>Produtos mais vendidos</li>
     </ul>
-  <li>Sistema de login simples</li>
-  <li>Gráficos com números aleatórios, a partir do intervalo de tempo e do tipo selecionado</li>
+  <li>Sistema de login simples;</li>
+  <li>Gráficos com números aleatórios, a partir do intervalo de tempo e do tipo selecionado;</li>
   <li>Layout responsivo</li>
 </ul>
 
 ---
 
 ## 🧭 Rodando a aplicação
+
+Por conveniência e para garantir que a aplicação rode conforme proposto no desafio, a página de autenticação do usuário foi definida como index
 
 ```bash
 
