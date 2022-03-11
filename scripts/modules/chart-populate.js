@@ -4,8 +4,9 @@ import initSalesPopulation from "./populate-sales-chart.js";
 
 const chartWrapper = document.querySelector(".general-report-wrapper__main");
 await salesChart();
+
 export default async function chartPopulate() {
-  initDateInterval();
+  initDateTimeInterval();
   const generalReportInput = document.querySelectorAll(
     ".general-report__input"
   );
@@ -197,7 +198,7 @@ function getDays() {
   return days.reverse();
 }
 
-function initDateInterval() {
+function initDateTimeInterval() {
   const dateInterval = document.querySelectorAll(".data-resume__input");
   dateInterval.forEach((item) => {
     item.addEventListener("click", chartPopulateDate);

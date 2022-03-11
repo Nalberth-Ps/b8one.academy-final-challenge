@@ -10,11 +10,11 @@ export default function handleAccordionMenuAnimation() {
 function handleAccordionMenuClick(event) {
   event.preventDefault();
   const activeMenu = this;
-  closeOpenDropdowns(activeMenu);
+  closeOpenMenus(activeMenu);
   activeMenu.classList.toggle("nav__item--selected");
 }
 
-function closeOpenDropdowns(activeMenu) {
+function closeOpenMenus(activeMenu) {
   const dropdownMenus = document.querySelectorAll("[data-dropdown]");
   dropdownMenus.forEach((menu) => {
     if (menu.innerHTML === activeMenu.innerHTML) return;

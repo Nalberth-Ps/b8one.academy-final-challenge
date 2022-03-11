@@ -74,5 +74,3 @@ function getTicksAmount() {
   if (screenSize > 490) return 15;
   else return 7;
 }
-
-getTicksAmount();

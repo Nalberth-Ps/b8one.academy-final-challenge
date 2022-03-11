@@ -11,7 +11,7 @@ async function fetchProductsData() {
 
 function populateTable(products) {
   const productsArrayHtml = products.map((product, index) => {
-    const priceInBRL = product.price.toLocaleString("pt-br", {
+    const priceInBRL = (product.price / 100).toLocaleString("pt-br", {
       style: "currency",
       currency: "BRL",
     });
