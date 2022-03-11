@@ -34,16 +34,7 @@ Reprodução do <a href="https://www.figma.com/file/F4d4sysbY6agIpFk0sHLMr/Prova
 ## 🧭 Rodando a aplicação
 
 ```bash
-# Clone este repositório
-$ git clone https://github.com/Nalberth-Ps/b8one.academy-challenge
 
-# Acesse a pasta do projeto no seu terminal/cmd
-$ cd b8one.academy-challenge
+# Abra o projeto utilizando o Live Server
 
-# Instale as dependências
-$ yarn install
-
-# Execute a aplicação em modo de desenvolvimento
-$ yarn start
-
-# A aplicação será aberta na porta: 3000 - acesse http://localhost:3000
+# Por padrão a aplicação será aberta em http://127.0.0.1:numPorta, troque por http://localhost:numPorta
