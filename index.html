@@ -1,308 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>b8one.academy - Login</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="./assets/css/normalize.css">
-  <link rel="stylesheet" href="./assets/css/dashboard.css">
-</head>
-<body>
-  <header class="header">
-    <div class="header-block__left">
-      <div class="hamburguer">
-        <button class="hamburguer__action">
-          <span class="hamburguer__item"></span>
-        </button>
-      </div>
-      <div class="company">
-      </div>
-    </div>
-    <div class="user-actions">
-      <ul class="user-actions__list">
-        <li class="user-actions__item">
-          <svg class="nabvar-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#CDD2EB" stroke="#CDD2EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9.09003 9.00002C9.32513 8.33169 9.78918 7.76813 10.4 7.40915C11.0108 7.05018 11.7289 6.91896 12.4272 7.03873C13.1255 7.15851 13.7588 7.52154 14.2151 8.06355C14.6714 8.60555 14.9211 9.29154 14.92 10C14.92 12 11.92 13 11.92 13" stroke="#142159" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 17H12.0094" stroke="#142159" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="dropdown__help dropdown-menu">
-            <span class="dropdown-menu__text dropdown-help__text">
-              Central de Ajuda
-            </span>
-            <span class="dropdown-menu__text dropdown-help__text">
-              Tutoriais
-            </span>
-            <span class="dropdown-help__highlight-text">
-              Falar com Especialista
-            </span>
-          </div>
-        </li>
-        <li class="user-actions__item">
-          <svg class="nabvar-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.5 8.40096C17.5 6.96853 16.9205 5.59478 15.8891 4.5819C14.8576 3.56903 13.4587 3 12 3C10.5413 3 9.14236 3.56903 8.11091 4.5819C7.07946 5.59478 6.5 6.96853 6.5 8.40096C6.5 14.7021 3.75 16.5024 3.75 16.5024H20.25C20.25 16.5024 17.5 14.7021 17.5 8.40096Z" fill="#CDD2EB" stroke="#CDD2EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M13.5859 20.1028C13.4248 20.3756 13.1934 20.6021 12.9151 20.7595C12.6368 20.9169 12.3213 20.9998 12.0001 20.9998C11.6789 20.9998 11.3634 20.9169 11.085 20.7595C10.8067 20.6021 10.5754 20.3756 10.4142 20.1028" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="user-actions-item__notification-circle user-actions-item__notification-circle--active"></span>
-          <div class="dropdown__notification dropdown-menu">
-            <div class="dropdown-notification__header">
-              <div class="hand-icon__wrapper">
-                <img src="./assets/images/hand-icon.svg" alt="Icone de uma mão">
-              </div>
-              <span class="dropdown-notification__title">
-                Bem-vindo(a) a Hubly Retailer
-              </span>
-              <span class="dropdown-notification__time">
-                10 min
-              </span>
-              <span class="dropdown-notification__circle"></span>
-            </div>
-            <span class="dropdown-notification__description">
-              Para uma completa experiência com a Retailer, precisamos que você siga os passos abaixo.
-            </span>
-            <div class="dropdown-notification__introduction-progress">
-              <div class="introduction-progress">
-                <svg class="introduction-progress__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="20" height="20" rx="4" fill="#425DC7"/>
-                  <path d="M14.5834 7.08325L8.28127 12.9166L5.41669 10.2651" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="introduction-progress__text">
-                  Cadastrar Organização
-                </span>
-              </div>
-              <div class="introduction-progress">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1" y="1" width="18" height="18" rx="3" fill="white" stroke="black" stroke-width="2"/>
-                </svg>
-                <div class="introduction-progress__wrapper">
-                  <span class="introduction-progress__text">
-                    Convidar Revendedores
-                  </span>
-                  <a href="#" class="introduction-progress__link">
-                    Vamos lá!
-                  </a>
-                </div>                  
-              </div>
-            </div>
-            <div class="dropdown-notification__monthly-report">
-              <div class="monthly-report--top">
-                <img class="monthly-report__icon" src="./assets/images/general-report-icon.png" alt="icone relatório geral">
-                <span class="monthly-report__text">
-                  O seu Relatório Mensal está pronto!
-                </span>
-                <span class="monthly-report__time">
-                  12 min
-                </span>
-              </div>
-              <a href="#" class="monthly-report__link">
-                Ir para Relatórios
-              </a>
-            </div>
-            <button class="monthly-report__mark-as-reader">
-              Marcar como Lidas
-            </button>
-          </div>
-        </li>
-        <li class="user-actions__item">
-          <div class="user-actions-item__profile">
-          </div>
-          <div class="dropdown__user dropdown-menu">
-          </div>
-        </li>
-      </ul>
-    </div>
-  </header>
-  <div class="main-content">
-    <aside class="sidebar">
-      <nav class="nav">
-        <ul class="nav__list">
-        </ul>
-      </nav>
-      <div class="sidebar__upgrade">
-          <div class="upgrade-image__wrapper">
-            <img src="./assets/images/rocket-icon.png" alt="ìcone de um foguete" class="upgrade-image__rocket">
-          </div>
-          <span class="sidebar-upgrade__description">
-            Libere novos recursos e decole seu negócio
-          </span>       
-          <a href="#" class="sidebar-upgrade__button">
-            Faça um upgrade!
-          </a>
-      </div>
-    </aside>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/authPage.css">
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+  </head>
+  <body>
     <main class="main">
-      <div class="release">
-        <div class="release-icon__wrapper">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 23.732 8.26801 30 16 30Z" fill="#F1F2F9" stroke="#F1F2F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M16 21.6V16" stroke="#425DC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M16 10.3995H16.012" stroke="#425DC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>  
-        </div>                
-        <span class="release__description">
-          🔥 Lançamento 🔥 Nova Ferramenta de Carrinhos Abandonados 😍
-        </span>
-        <a href="#" class="release__new-tool">
-          Conheça a nova ferramenta
-        </a>
-      </div>
-      <div class="data-resume">
-        <h1 class="data-resume__title">
-          Resumo de dados
-        </h1>
-        <ul class="data-resume__list">
-          <li class="data-resume__item">
-            <input class="data-resume__input" type="radio" name="data-time-interval" id="seven-days" value="7" checked>
-            <label class="data-resume__label" for="seven-days">Últimos 7 dias</label>
-          </li>
-          <li class="data-resume__item">
-            <input class="data-resume__input" type="radio" name="data-time-interval" id="fifteen-days" value="15">
-            <label class="data-resume__label" for="fifteen-days">Últimos 15 dias</label>
-          </li>
-          <li class="data-resume__item">
-            <input class="data-resume__input" type="radio" name="data-time-interval" id="last-month" value="30">
-            <label class="data-resume__label" for="last-month">Último mês</label>
-          </li>
-          <li class="data-resume__item">
-            <input class="data-resume__input" type="radio" name="data-time-interval" id="last-year" value="365">
-            <label class="data-resume__label" for="last-year">Último ano</label>
-          </li>
-          <li class="data-resume__item">
-            <input class="data-resume__input" type="radio" name="data-time-interval" id="custom">
-            <label class="data-resume__label" for="custom">
-              Personalizado
-              <svg class="data-resume__dropdown-icon" width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.00016 1.5L4.00016 4.5L7.00016 1.5" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>  
-            </label>                          
-          </li>
-        </ul>
-        <p class="data-resume__description">
-          Exibindo dados do período 
-          <span class="data-resume__description--highlight">
-            1 de novembro à 8 de novembro de 2021 
-          </span> 
+      <div class="card">
+        <h1 class="card__title">Olá, tudo bem? 👋</h1>
+        <p class="card__description">
+          Vamos decolar para grandes dias de vendas.
         </p>
-      </div>
-      <section class="general-report">
-        <div class="general-report--left">
-          <div class="general-report__header">
-            <div class="general-report-icon__wrapper">
-              <img src="./assets/images/general-report-icon.png" alt="Icone do Relatório Geral"> 
-            </div>                    
-            <h1 class="general-report__title">Relatório geral</h1>
-          </div>
-          <ul class="general-report__list">
-            <li class="general-report__item">
-              <input class="general-report__input" type="radio" name="chart-input" id="sells" value="sells" checked>
-              <label for="sells" class="general-report__label">Vendas</label>
-            </li>
-            <li class="general-report__item">
-              <input class="general-report__input" type="radio" name="chart-input" id="orders" value="orders">
-              <label for="orders" class="general-report__label">Pedidos</label>
-            </li>
-            <li class="general-report__item">
-              <input class="general-report__input" type="radio" name="chart-input" id="resellers" value="resellers">
-              <label for="resellers" class="general-report__label">Revendedores</label>
-            </li>
-          </ul>
-          <div class="general-report-wrapper__main">
-            <ul class="data-cards-sells__list">
-
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section class="insights">
-        <div class="insights__header">
-          <img src="./assets/images/eyes-icon.svg" alt="Icone olhos">
-          <h1 class="insights__title">
-            Insights
-          </h1>
-        </div>
-        <div class="insights__wrapper-table">
-          <h2 class="insights-wrapper-table__title">
-            Produtos mais vendidos
-          </h2>
-          <table class="insights__table">
-            <thead class="insights-table__thead">
-              <tr class="insights-table__trow">
-                <th class="insights-table__thead th-col-1">
-                  <span class="insights-table__title">
-                    Produto
-                  </span>
-                </th>
-                <th class="insights-table__thead th-col-2">
-
-                </th>
-                <th class="insights-table__thead th-col-3">
-                  <span class="insights-table__title">
-                    Número do Pedido
-                  </span>
-                </th>
-                <th class="insights-table__thead th-col-4">
-                  <span class="insights-table__title">
-                    Departamento
-                  </span>
-                </th>
-                <th class="insights-table__thead th-col-5">
-                  <span class="insights-table__title">
-                    Valor
-                  </span>
-                </th>
-              </tr>
-            </thead>
-            <tbody class="insights-table__body">              
-            </tbody>
-          </table>
-        </div>
-        <div class="insights__navbar">
-          <div class="insights-navbar__quantity">
-            <label for="quantity" class="quantity__text">
-              Exibindo
-              <select class="quantity__select" name="quantity" id="quantity">
-                <option value="10" selected>10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-                <option value="30">30</option>  
-              </select>
-              produtos por pagina
-            </label>
-          </div>
-          <div class="insights__pagination">
-            <button type="button" class="pagination__arrow-wrapper">
-              <svg class="pagination__arrow-icon" width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 1L1 4L4 7" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <form class="card__login-form" action="javascript:void(0);">
+          <div class="input__email">
+            <label class="card-login-form__label" for="email">Seu E-mail</label>
+            <input class="card-login-form__input" type="email" name="email" id="email" placeholder="exemplo@email.com">
+            <span class="card__input-wrong">Este e-mail não existe, você tem outro?</span>
+          </div>          
+          <div class="input__password">
+            <label class="card-login-form__label" for="password">Sua Senha</label>
+            <input class="card-login-form__input"  type="password" name="password" id="password" placeholder="Digite sua senha">
+            <button type="button" class="card__password-visible" onclick="showPassword()">
+              <svg class="card-password-visible__icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.3127 15.313C15.0131 15.6345 14.6518 15.8924 14.2503 16.0713C13.8489 16.2502 13.4155 16.3464 12.9761 16.3541C12.5367 16.3619 12.1002 16.281 11.6927 16.1164C11.2852 15.9518 10.915 15.7068 10.6042 15.3961C10.2934 15.0853 10.0484 14.7151 9.88383 14.3076C9.71923 13.9001 9.63839 13.4636 9.64615 13.0242C9.6539 12.5847 9.75008 12.1514 9.92896 11.7499C10.1078 11.3484 10.3657 10.9871 10.6873 10.6875M19.48 19.4803C17.6152 20.9017 15.3445 21.6892 13 21.7275C5.36364 21.7275 1 13.0002 1 13.0002C2.35697 10.4714 4.23906 8.262 6.52 6.52025L19.48 19.4803ZM10.7091 4.53479C11.46 4.35903 12.2288 4.27116 13 4.27298C20.6364 4.27298 25 13.0002 25 13.0002C24.3378 14.2391 23.5481 15.4054 22.6436 16.4802L10.7091 4.53479Z" stroke="#425DC7" stroke-width="1.5"/>
+                <path d="M1 1L25 25" stroke="#142159" stroke-width="1.5"/>
               </svg>
             </button>
-              
-            <input class="insights-pagination__input" type="radio" name="pagination" id="first" checked>
-            <label class="insights-pagination__label" for="first">1</label>
-
-            <input class="insights-pagination__input"  type="radio" name="pagination" id="second">
-            <label class="insights-pagination__label" for="second">2</label>
-
-            <input class="insights-pagination__input"  type="radio" name="pagination" id="third">
-            <label class="insights-pagination__label" for="third">3</label>
-
-            <button type="button" class="pagination__arrow-wrapper">
-              <svg class="pagination__arrow-icon" width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.999878 7L3.99988 4L0.999878 0.999996" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>       
-            </button>       
           </div>
-        </div>
-      </section>
+          <div class="card__bottom">
+            <label class="card-remember-block">
+              <input class="card-remember__input" type="checkbox" name="remember" id="remember">
+              <span class="card-remember__checkmark"></span>
+              Manter conectado
+            </label>
+            <a href="#" class="card__forgot-password">Esqueci minha senha</a>
+          </div>
+          <button class="card-button__submit" onclick="initUser()">Entrar</button>
+        </form>
+      </div>
     </main>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="module" src="./scripts/dashboard.js"></script>
-</body>
+    <script src="./scripts/authPage.js"></script>
+  </body>
 </html>
