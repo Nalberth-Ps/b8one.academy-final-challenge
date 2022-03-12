@@ -123,8 +123,10 @@ function populateAccordionMenu({ name, icon, hasChildren }) {
   if (menuComplementData === undefined) menuComplementData = "";
 
   const menuContentHTML = `
-  <li class="nav__item " ${menuComplementData.dataAttribute}>
-    <a href="#" class="nav__link">    
+  <li class="nav__item" ${menuComplementData.dataAttribute}>
+    <a href="#" class="nav__link ${
+      name === "Resumo de dados" ? "nav__link--active" : ""
+    }">    
       ${icon}                             
       ${name}
       ${hasChildren ? navDropdownIconHTML : ""}

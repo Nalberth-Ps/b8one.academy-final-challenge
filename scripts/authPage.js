@@ -39,7 +39,7 @@ function handleUserNotFound() {
 
   inputWrong.addEventListener("change", ({ currentTarget }) => {
     currentTarget.classList.remove("card-login-form__input--wrong");
-    inputWrong.classList.remove("card__input-wrong--active");
+    feedbackHelperText.classList.remove("card__input-wrong--active");
   });
 }
 
