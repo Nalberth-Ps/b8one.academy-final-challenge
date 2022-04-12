@@ -112,30 +112,36 @@ function accordionMenuData(menuTree) {
   });
 }
 
-function populateAccordionMenu({ name, icon, hasChildren }) {
-  const navDropdownIconHTML = `
-  <svg class="nav__dropdown-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7.50024 9.74963L12.0002 14.2496L16.5002 9.74963" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-  `;
+function populateAccordionMenu(menuContent) {
+  const menuContentHTML = getMenuContent(menuContent);
+  const accordionMenuList = document.querySelector(".nav__list");
+  accordionMenuList.insertAdjacentHTML("beforeend", menuContentHTML);
+}
 
+function getMenuContent({ name, icon, hasChildren }) {
   const menuComplementData = verifyMenuChildren(hasChildren);
   if (menuComplementData === undefined) menuComplementData = "";
 
-  const menuContentHTML = `
-  <li class="nav__item" ${menuComplementData.dataAttribute}>
-    <a href="#" class="nav__link ${
-      name === "Resumo de dados" ? "nav__link--active" : ""
-    }">    
-      ${icon}                             
-      ${name}
-      ${hasChildren ? navDropdownIconHTML : ""}
-      </a>
-    ${menuComplementData.content}             
-</li>
+  return `
+    <li class="nav__item" ${menuComplementData.dataAttribute}>
+      <a href="#" class="nav__link ${
+        name === "Resumo de dados" ? "nav__link--active" : ""
+      }">    
+        ${icon}                             
+        ${name}
+        ${hasChildren ? getDropdownIcon() : ""}
+        </a>
+      ${menuComplementData.content}             
+    </li>
   `;
-  const accordionMenuList = document.querySelector(".nav__list");
-  accordionMenuList.insertAdjacentHTML("beforeend", menuContentHTML);
+}
+
+function getDropdownIcon() {
+  return `
+    <svg class="nav__dropdown-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.50024 9.74963L12.0002 14.2496L16.5002 9.74963" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `;
 }
 
 function verifyMenuChildren(hasChildren) {

@@ -1,9 +1,7 @@
 export default async function initSalesPopulation() {
   const salesData = await fetchSellsData();
-  const chartWrapper = document.querySelector(".general-report-wrapper__main");
-  chartWrapper.innerHTML = "";
-  const a = `<ul class="data-cards-sells__list"></ul>`;
-  chartWrapper.insertAdjacentHTML("beforeend", a);
+
+  resetChartContent();
   populateSales(salesData);
 }
 
@@ -17,6 +15,10 @@ function populateSales(sales) {
   const cardsHTML = cardsData();
 
   const keysName = Object.keys(sales);
+  console.log(
+    "🚀 ~ file: populate-sales-chart.js ~ line 18 ~ populateSales ~ keysName",
+    keysName
+  );
 
   keysName.forEach((key) => {
     const saleType = cardsHTML[key];
@@ -26,11 +28,11 @@ function populateSales(sales) {
 }
 
 function populateCards({ name, icon, number }) {
-  let cardContentHTML = `
+  const cardContentHTML = `
     <li class="data-cards-sells__item">
       <div class="data-card-sells">
         <div class="data-card-sells__icon-wrapper">
-            ${icon}
+          ${icon}
         </div>
         <div class="data-card-sells__text-wrapper">
           <span class="data-card-sells__description">
@@ -92,4 +94,12 @@ function cardsData() {
       };
     },
   };
+}
+
+function resetChartContent() {
+  const chartWrapper = document.querySelector(".general-report-wrapper__main");
+  chartWrapper.innerHTML = "";
+
+  const cardsList = `<ul class="data-cards-sells__list"></ul>`;
+  chartWrapper.insertAdjacentHTML("beforeend", cardsList);
 }

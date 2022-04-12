@@ -24,33 +24,10 @@ function populateResellsRanking(resellers) {
     `;
 
   resellers.forEach(({ name, ordersCount, percentage }, index) => {
-    const resellerInitials = getInitials(name);
-
-    resellersRankingContent += `
-    <li class="resells-ranking__item">
-      <div class="resell-wrapper">
-        <span class="resell__indice">
-          ${index + 1}°
-        </span>
-        <div class="resell-info-wrapper">
-        <span class="avatar-circle__icon reseller-avatar">
-          ${resellerInitials}
-        </span>
-        <div class="resell-info">
-          <span class="resell__name">
-            ${name}
-          </span>
-          <div class="resell-orders-wrapper">
-            <span class="resell__orders">
-              ${ordersCount} pedidos
-            </span>
-            ${salesSuccess(percentage)}
-          </div>
-        </div>
-      </div>
-    </div>
-    </li>
-  `;
+    resellersRankingContent += getResellersContent(
+      { name, ordersCount, percentage },
+      index
+    );
   });
 
   resellersRankingContent += `
@@ -68,26 +45,48 @@ function populateResellsRanking(resellers) {
 
 function salesSuccess(percentage) {
   const orderPercentage = percentage.substring(1);
-  const orderPercentageContentSuccess = `
-    <span class="resell-orders__percentage resell-orders__percentage--success">
-      ${orderPercentage}
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.9998 9.5L7.99976 6.5L4.99976 9.5" stroke="#158F2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </span>`;
+  const percentageState = percentage.charAt(0);
 
-  const orderPercentageContentNegative = `
-      <span class="resell-orders__percentage resell-orders__percentage--negative">
-        ${orderPercentage}
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5.00024 6.5L8.00024 9.5L11.0002 6.5" stroke="#EB0045" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
+  const orderPercentageContent = `
+    <span class="resell-orders__percentage ${getResellerClassName(
+      percentageState
+    )}">
+      ${orderPercentage}
+      ${getArrowIcon(percentageState)}
+    </span>
     `;
 
-  return percentage.charAt(0) === "+"
-    ? orderPercentageContentSuccess
-    : orderPercentageContentNegative;
+  return orderPercentageContent;
+}
+
+function getResellersContent({ name, ordersCount, percentage }, index) {
+  const resellerInitials = getInitials(name);
+
+  return `
+  <li class="resells-ranking__item">
+    <div class="resell-wrapper">
+      <span class="resell__indice">
+        ${index + 1}°
+      </span>
+      <div class="resell-info-wrapper">
+      <span class="avatar-circle__icon reseller-avatar">
+        ${resellerInitials}
+      </span>
+      <div class="resell-info">
+        <span class="resell__name">
+          ${name}
+        </span>
+        <div class="resell-orders-wrapper">
+          <span class="resell__orders">
+            ${ordersCount} pedidos
+          </span>
+          ${salesSuccess(percentage)}
+        </div>
+      </div>
+    </div>
+  </div>
+  </li>
+`;
 }
 
 function getInitials(resellerName) {
@@ -98,4 +97,25 @@ function getInitials(resellerName) {
     .join("")
     .substring(0, 2)
     .toUpperCase();
+}
+
+function getArrowIcon(percentageState) {
+  if (percentageState === "+") {
+    return `
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.9998 9.5L7.99976 6.5L4.99976 9.5" stroke="#158F2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    `;
+  }
+
+  return `
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5.00024 6.5L8.00024 9.5L11.0002 6.5" stroke="#EB0045" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  `;
+}
+
+function getResellerClassName(percentageState) {
+  if (percentageState === "+") return "resell-orders__percentage--success";
+  return "resell-orders__percentage--negative";
 }
